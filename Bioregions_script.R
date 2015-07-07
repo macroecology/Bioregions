@@ -42,10 +42,11 @@ pcm.def <- pcm[,-c(1:2)][,!colnames(pcm[,-c(1:2)])%in% kf] # sale bien pero sin 
 ## Quito taxa filogenia
 tree.def <- drop.tip(tree,km)
 ## Miro si ya tienen el mismo número de especies:
-ncol(pcm.def) # 4701 especies
-length(tree.def$tip.label) # 4701 especies.
+ncol(pcm.def) # 28 especies
+length(tree.def$tip.label) # 28 especies.
 
-pcm.def <- cbind(coord, pcm.def)
+pcm_def <- cbind(coord, pcm.def)
+write.csv(pcm_def, "pcm_def.csv")
 
 # Análisis de distribuciones en nodos: paquete nodiv
 # cargo los paquetes necesarios 
